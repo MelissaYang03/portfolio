@@ -6,10 +6,16 @@ import './header.scss';
 
 //https://www.youtube.com/watch?v=d0c4aPO9PNg - Smooth Scrolling Navbar Transition in ReactJS
 const Header = () => {
-    const [isNavOpen, setIsNavOpen] = useState(false);
+    const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
     const handleToggle = () => {
-        setIsNavOpen(!isNavOpen);
+        setIsMobileNavOpen(!isMobileNavOpen);
+    }
+
+    const closeMobileNav = () => {
+        if(isMobileNavOpen) {
+            setIsMobileNavOpen(!isMobileNavOpen);
+        }
     }
 
     return (
@@ -22,18 +28,18 @@ const Header = () => {
                     <FaAlignJustify className='nav-icon' />
                 </button>
             </div>
-            <ul className={`nav-links ${isNavOpen ? 'show-nav' : ''}`}>
+            <ul className={`nav-links ${isMobileNavOpen ? 'show-nav' : ''}`}>
                 <li className='nav-links-item'>
-                    <Link smooth to='#about'>About</Link>
+                    <Link smooth to='#about' onClick={closeMobileNav}>About</Link>
                 </li>
                 <li className='nav-links-item'>
-                    <Link smooth to='#skills'>Skills</Link>
+                    <Link smooth to='#skills' onClick={closeMobileNav}>Skills</Link>
                 </li>
                 <li className='nav-links-item'>
-                    <Link smooth to='#work'>Work Experience</Link>
+                    <Link smooth to='#work' onClick={closeMobileNav}>Work Experience</Link>
                 </li>
                 <li className='nav-links-item'>
-                    <Link smooth to='#contact'>Contact Me</Link>
+                    <Link smooth to='#contact' onClick={closeMobileNav}>Contact Me</Link>
                 </li>
             </ul>
         </nav>
