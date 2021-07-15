@@ -1,0 +1,60 @@
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    //background-color: #cfecfc;
+    background-color: #f7f7f7;
+
+    .profile {
+        width: 30%;
+
+        display: flex;
+        justify-content: center;
+
+        img {
+            border-radius: 50%;
+            width: 60%;
+        }
+    }
+
+    .content {
+        width: 70%;
+
+        .about-intro {
+            font-size: 1.8rem;
+            text-align: left;
+        }
+
+        .about-role {
+            font-size: 3rem;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+
+        .about-description {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .about-container {
+        flex-direction: column;
+        padding: 120px 20px;
+
+        .profile {
+            width: 85%;
+        }
+
+        .content {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+
+            .about-intro {
+                text-align: center;
+            }
+        }
+    }
+}
